@@ -114,3 +114,6 @@ python replot_ipa_bars_v6.py
 - Python packages: pandas, numpy, matplotlib, seaborn, xlsxwriter
 - Bioinformatics tools: samtools, bedtools, minimap2, LAST
 - For pathway analysis: Ingenuity Pathway Analysis (IPA) exports
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
