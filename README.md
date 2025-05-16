@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance when working with code in this repository.
+This file provides guidance for working with code in this repository.
 
 ## Repository Purpose
 
