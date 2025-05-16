@@ -1,4 +1,4 @@
-# CLAUDE.md
+# Haploid Screening Workflow
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -113,4 +113,4 @@ python replot_ipa_bars_v6.py
 
 - Python packages: pandas, numpy, matplotlib, seaborn, xlsxwriter
 - Bioinformatics tools: samtools, bedtools, minimap2, LAST
-- For pathway analysis: Ingenuity Pathway Analysis (IPA) exports
+- For pathway analysis: Ingenuity Pathway Analysis (IPA) export files
