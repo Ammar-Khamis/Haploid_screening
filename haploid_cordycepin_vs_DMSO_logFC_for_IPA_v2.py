@@ -8,7 +8,8 @@ add_pvals_to_IPA_sheet.py
 • Output has Gene Name, logFC, pval, qval (FDR).
 """
 
-import pandas as pd, numpy as np
+import pandas as pd
+import numpy as np
 from scipy.stats import fisher_exact
 from statsmodels.stats.multitest import multipletests
 
