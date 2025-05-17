@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Normalize_Matrix_Visualization.py
+Normalize_Matrix_Visualization_Enhanced_v2.py
 --------------------------------
 Creates normalized and improved visualizations for condition comparison matrices
 from haploid screening data. Normalizes counts by condition total to account for
@@ -18,7 +18,7 @@ Dependencies:
 - xlsxwriter (for Excel export)
 
 Usage Example:
-  python Normalize_Matrix_Visualization.py \
+  python Normalize_Matrix_Visualization_Enhanced_v2.py \
     --matrix gene_matrix.txt \
     --output_dir matrix_viz \
     --top_genes 50 \
