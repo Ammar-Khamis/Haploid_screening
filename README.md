@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance for working with code in this repository.
 
 ## Repository Purpose
 
@@ -115,6 +115,7 @@ python replot_ipa_bars_v6.py
 - Bioinformatics tools: samtools, bedtools, minimap2, LAST
 - For pathway analysis: Ingenuity Pathway Analysis (IPA) exports
 
+
 ## Installation
 
 Install the required Python packages:
@@ -129,3 +130,4 @@ approach is via Bioconda:
 ```bash
 conda install -c bioconda samtools bedtools minimap2 last
 ```
+
