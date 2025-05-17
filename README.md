@@ -148,3 +148,17 @@ conda install -c bioconda samtools bedtools minimap2 last
 
 
 
+
+## Running Tests
+
+Tests require `pytest` and the packages listed in `requirements.txt` must be installed first. Run a specific test with:
+
+```bash
+pytest tests/test_extract_insertion_sites.py
+```
+
+Or run all tests from the repository root:
+
+```bash
+pytest
+```
