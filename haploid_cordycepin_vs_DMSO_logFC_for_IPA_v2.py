@@ -21,25 +21,32 @@ LIBSIZE_DMSO  = 37_273
 PSEUDO        = 0.5   # same half‑insertion pseudocount for logFC only
 # ─────────────────────────────────────────────────────────────────────── #
 
-df = pd.read_excel(INFILE)
 
-# logFC (library‑size‑normalised, direction flipped)
-freq_c = (df["Insertions"] + PSEUDO) / (LIBSIZE_CORDY + PSEUDO)
-freq_d = (df["hyPB_Control_DMSO Insertions"] + PSEUDO) / (LIBSIZE_DMSO + PSEUDO)
-df["logFC"] = -np.log2(freq_c / freq_d)          # minus makes “more insertions” negative
+def main() -> None:
+    df = pd.read_excel(INFILE)
 
-# Fisher’s exact test
-pvals = []
-for a, b in zip(df["Insertions"], df["hyPB_Control_DMSO Insertions"]):
-    table = [[a, b],
-             [LIBSIZE_CORDY - a, LIBSIZE_DMSO - b]]
-    pvals.append(fisher_exact(table, alternative="two-sided")[1])
+    # logFC (library-size-normalised, direction flipped)
+    freq_c = (df["Insertions"] + PSEUDO) / (LIBSIZE_CORDY + PSEUDO)
+    freq_d = (
+        df["hyPB_Control_DMSO Insertions"] + PSEUDO
+    ) / (LIBSIZE_DMSO + PSEUDO)
+    df["logFC"] = -np.log2(freq_c / freq_d)  # minus makes "more insertions" negative
 
-df["pval"] = pvals
+    # Fisher's exact test
+    pvals = []
+    for a, b in zip(df["Insertions"], df["hyPB_Control_DMSO Insertions"]):
+        table = [[a, b], [LIBSIZE_CORDY - a, LIBSIZE_DMSO - b]]
+        pvals.append(fisher_exact(table, alternative="two-sided")[1])
 
-# Benjamini–Hochberg FDR
-df["qval"] = multipletests(df["pval"], method="fdr_bh")[1]
+    df["pval"] = pvals
 
-# save the four columns IPA can ingest (it ignores extras)
-df[["Gene Name", "logFC", "pval", "qval"]].to_excel(OUTFILE, index=False)
-print(f"✓ Wrote {OUTFILE}")
+    # Benjamini–Hochberg FDR
+    df["qval"] = multipletests(df["pval"], method="fdr_bh")[1]
+
+    # save the four columns IPA can ingest (it ignores extras)
+    df[["Gene Name", "logFC", "pval", "qval"]].to_excel(OUTFILE, index=False)
+    print(f"✓ Wrote {OUTFILE}")
+
+
+if __name__ == "__main__":
+    main()
