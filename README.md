@@ -133,7 +133,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Installation
 
-Install the required Python packages:
+Install the required Python packages (including `pytest` for running the tests):
 
 ```bash
 pip install -r requirements.txt
@@ -147,18 +147,35 @@ conda install -c bioconda samtools bedtools minimap2 last
 ```
 
 
-
-
 ## Running Tests
 
-Tests require `pytest` and the packages listed in `requirements.txt` must be installed first. Run a specific test with:
 
-```bash
-pytest tests/test_extract_insertion_sites.py
-```
-
-Or run all tests from the repository root:
+To verify the helper functions work as expected, run the unit tests with [pytest](https://docs.pytest.org/). Ensure you install the dependencies listed in [requirements.txt](requirements.txt) first. From the repository root, execute:
 
 ```bash
 pytest
 ```
+
+This command runs all tests under the `tests/` directory. A successful run will output a message similar to `6 passed` indicating every check succeeded.
+
+
+root_dir/
+├── Extract_Insertion_Sites.py
+└── tests/
+    └── test_extract_insertion_sites.py
+
+
+To run the tests:
+
+Make sure pytest is installed (it is not listed in requirements.txt yet):
+
+pip install pytest
+From the repository root /users/paxak6/Haploid_screening_ONT, execute:
+
+pytest tests/test_extract_insertion_sites.py
+or simply pytest to run all tests in the tests/ directory.
+
+This will import Extract_Insertion_Sites.py from the repository root and run the unit tests.
+
+
+
