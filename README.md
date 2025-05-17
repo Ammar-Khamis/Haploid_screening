@@ -111,6 +111,23 @@ python replot_ipa_bars_v6.py
 
 ## Dependencies
 
-- Python packages: pandas, numpy, matplotlib, seaborn, xlsxwriter
+- Python packages: pandas, numpy, matplotlib, seaborn, xlsxwriter, scipy, statsmodels
 - Bioinformatics tools: samtools, bedtools, minimap2, LAST
 - For pathway analysis: Ingenuity Pathway Analysis (IPA) exports
+
+
+## Installation
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install the external tools (samtools, bedtools, minimap2, LAST). The easiest
+approach is via Bioconda:
+
+```bash
+conda install -c bioconda samtools bedtools minimap2 last
+```
+
