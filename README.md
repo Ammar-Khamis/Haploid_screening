@@ -1,4 +1,8 @@
 
+# Haploid Screening Workflow
+
+
+
 # Haploid Screening Pipeline
 
 # README.md
@@ -117,6 +121,9 @@ python replot_ipa_bars_v6.py
 
 - Python packages: pandas, numpy, matplotlib, seaborn, xlsxwriter, scipy, statsmodels
 - Bioinformatics tools: samtools, bedtools, minimap2, LAST
+
+- For pathway analysis: Ingenuity Pathway Analysis (IPA) export files
+
 - For pathway analysis: Ingenuity Pathway Analysis (IPA) exports
 
 ## License
@@ -139,5 +146,6 @@ approach is via Bioconda:
 ```bash
 conda install -c bioconda samtools bedtools minimap2 last
 ```
+
 
 
