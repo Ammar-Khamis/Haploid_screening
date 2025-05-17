@@ -148,3 +148,14 @@ conda install -c bioconda samtools bedtools minimap2 last
 
 
 
+
+## Running Tests
+
+To verify the helper functions work as expected, run the unit tests with [pytest](https://docs.pytest.org/). Ensure you install the dependencies listed in [requirements.txt](requirements.txt) first. From the repository root, execute:
+
+```bash
+pytest
+```
+
+This command runs all tests under the `tests/` directory. A successful run will output a message similar to `6 passed` indicating every check succeeded.
+
