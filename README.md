@@ -115,6 +115,11 @@ python replot_ipa_bars_v6.py
 - Bioinformatics tools: samtools, bedtools, minimap2, LAST
 - For pathway analysis: Ingenuity Pathway Analysis (IPA) exports
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
 
 ## Installation
 
@@ -130,4 +135,5 @@ approach is via Bioconda:
 ```bash
 conda install -c bioconda samtools bedtools minimap2 last
 ```
+
 
