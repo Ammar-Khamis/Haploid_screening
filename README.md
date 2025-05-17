@@ -133,7 +133,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Installation
 
-Install the required Python packages:
+Install the required Python packages (including `pytest` for running the tests):
 
 ```bash
 pip install -r requirements.txt
