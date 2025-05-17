@@ -165,6 +165,14 @@ root_dir/
     └── test_extract_insertion_sites.py
 
 
+cd /users/paxak6/Haploid_screening_ONT
+
+Then run
+
+pytest tests/test_extract_insertion_sites.py
+
+
+
 To run the tests:
 
 Make sure pytest is installed (it is not listed in requirements.txt yet):
