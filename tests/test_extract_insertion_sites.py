@@ -1,4 +1,13 @@
+import os
+import sys
 import pytest
+
+# Ensure the repository root is on the Python path so the tests can
+# import modules when executed from arbitrary working directories.
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+
 from Extract_Insertion_Sites import parse_cigar, calculate_5prime_position
 
 
