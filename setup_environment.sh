@@ -6,10 +6,9 @@ MICROMAMBA="$HOME/.local/bin/micromamba"
 if [ ! -x "$MICROMAMBA" ]; then
   mkdir -p "$HOME/.local/bin"
   curl -L https://micro.mamba.pm/api/micromamba/linux-64/latest \
-    | tar -xvj --strip-components=1 bin/micromamba -C /tmp
+    | tar -xvj -C /tmp --strip-components=1 -f - bin/micromamba
   install -m755 /tmp/micromamba "$MICROMAMBA"
 fi
-
 # Enable micromamba shell support
 source <($MICROMAMBA shell hook -s bash)
 
