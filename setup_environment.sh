@@ -10,6 +10,7 @@ if [ ! -x "$MICROMAMBA" ]; then
   install -m755 /tmp/micromamba "$MICROMAMBA"
 fi
 
+
 # Micromamba requires MAMBA_ROOT_PREFIX to be defined
 export MAMBA_ROOT_PREFIX="${MAMBA_ROOT_PREFIX:-$HOME/micromamba}"
 mkdir -p "$MAMBA_ROOT_PREFIX"
