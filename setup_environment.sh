@@ -9,8 +9,14 @@ if [ ! -x "$MICROMAMBA" ]; then
     | tar -xvj -C /tmp --strip-components=1 -f - bin/micromamba
   install -m755 /tmp/micromamba "$MICROMAMBA"
 fi
+
+
+# Micromamba requires MAMBA_ROOT_PREFIX to be defined
+export MAMBA_ROOT_PREFIX="${MAMBA_ROOT_PREFIX:-$HOME/micromamba}"
+mkdir -p "$MAMBA_ROOT_PREFIX"
+
 # Enable micromamba shell support
-source <($MICROMAMBA shell hook -s bash)
+eval "$($MICROMAMBA shell hook -s bash)"
 
 # Link the conda command to micromamba for compatibility
 ln -sf "$MICROMAMBA" "$HOME/.local/bin/conda"
