@@ -9,7 +9,6 @@ if [ ! -x "$MICROMAMBA" ]; then
     | tar -xvj -C /tmp --strip-components=1 -f - bin/micromamba
   install -m755 /tmp/micromamba "$MICROMAMBA"
 fi
-
 # Enable micromamba shell support
 source <($MICROMAMBA shell hook -s bash)
 
