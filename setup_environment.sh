@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # Install micromamba into ~/.local/bin if it is not already present
+# Path to the micromamba binary
 MICROMAMBA="$HOME/.local/bin/micromamba"
 if [ ! -x "$MICROMAMBA" ]; then
   mkdir -p "$HOME/.local/bin"
@@ -10,13 +11,12 @@ if [ ! -x "$MICROMAMBA" ]; then
   install -m755 /tmp/micromamba "$MICROMAMBA"
 fi
 
-
-# Micromamba requires MAMBA_ROOT_PREFIX to be defined
-export MAMBA_ROOT_PREFIX="${MAMBA_ROOT_PREFIX:-$HOME/micromamba}"
+# Ensure micromamba knows where its root prefix is
+export MAMBA_ROOT_PREFIX="${MAMBA_ROOT_PREFIX:-$HOME/.micromamba}"
 mkdir -p "$MAMBA_ROOT_PREFIX"
 
 # Enable micromamba shell support
-eval "$($MICROMAMBA shell hook -s bash)"
+source <($MICROMAMBA shell hook -s bash)
 
 # Link the conda command to micromamba for compatibility
 ln -sf "$MICROMAMBA" "$HOME/.local/bin/conda"
@@ -41,8 +41,8 @@ micromamba create -n last_env last perl perl-bioperl -y
 
 # Convenience aliases
 if ! grep -q 'use_biotools' ~/.bashrc 2>/dev/null; then
-  echo 'alias use_biotools="conda activate biotools"' >> ~/.bashrc
+  echo 'alias use_biotools=\"conda activate biotools\"' >> ~/.bashrc
 fi
 if ! grep -q 'use_last' ~/.bashrc 2>/dev/null; then
-  echo 'alias use_last="conda activate last_env"' >> ~/.bashrc
+  echo 'alias use_last=\"conda activate last_env\"' >> ~/.bashrc
 fi
