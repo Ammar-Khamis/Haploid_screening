@@ -185,5 +185,12 @@ or simply pytest to run all tests in the tests/ directory.
 
 This will import Extract_Insertion_Sites.py from the repository root and run the unit tests.
 
+## 🧾 License
+
+**License:** [MIT License](./LICENSE) © 2024 *Ammar Sabah Khamis*  
+
+This pipeline and its associated scripts are released under a permissive open-source license to encourage reuse and adaptation in bioinformatics research.  
+Please cite this repository if you use or modify any part of the code in your work.
+
 
 
